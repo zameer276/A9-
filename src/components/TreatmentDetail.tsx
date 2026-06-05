@@ -1,5 +1,6 @@
 import { X, Calendar, Plus, Sparkles, CheckCircle2 } from "lucide-react";
 import { Treatment } from "../types";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface TreatmentDetailProps {
   treatment: Treatment;
@@ -19,11 +20,12 @@ export default function TreatmentDetail({ treatment, onClose, onBookClick }: Tre
       >
         {/* Banner Image */}
         <div className="relative h-48 sm:h-64 bg-slate-900" id="treatment-detail-banner">
-          <img 
+          <ImageWithFallback 
             src={treatment.imageUrl} 
             alt={treatment.title}
             className="w-full h-full object-cover opacity-85"
-            referrerPolicy="no-referrer"
+            category={treatment.category}
+            variant="treatment"
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />

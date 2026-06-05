@@ -40,6 +40,7 @@ import BookingModal from "./components/BookingModal";
 import TreatmentDetail from "./components/TreatmentDetail";
 import BeforeAfterSlider from "./components/BeforeAfterSlider";
 import Footer from "./components/Footer";
+import ImageWithFallback from "./components/ImageWithFallback";
 
 export default function App() {
   // Navigation active section
@@ -265,11 +266,11 @@ export default function App() {
 
                 {/* Main Image Banner Card */}
                 <div className="relative overflow-hidden rounded-2xl border-4 border-white shadow-2xl skew-y-0 max-h-[500px]">
-                  <img 
+                  <ImageWithFallback 
                     src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" 
                     alt="A9 Premium Dermatology Clinic Interior"
                     className="w-full h-full object-cover rounded-xl"
-                    referrerPolicy="no-referrer"
+                    variant="clinic"
                   />
                   
                   {/* Overlaid Card for clinic timings */}
@@ -402,11 +403,12 @@ export default function App() {
               >
                 {/* Thumbnail Image */}
                 <div className="relative h-48 bg-slate-100 overflow-hidden">
-                  <img 
+                  <ImageWithFallback 
                     src={t.imageUrl} 
                     alt={t.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
+                    category={t.category}
+                    variant="treatment"
                   />
                   <div className="absolute top-3 left-3">
                     <span className="inline-block text-[10px] font-sans font-bold uppercase tracking-wider text-teal-800 bg-teal-50 py-1 px-2.5 rounded-md border border-teal-100">
@@ -466,11 +468,11 @@ export default function App() {
             <div className="lg:col-span-5 relative" id="about-visuals">
               <div className="space-y-4">
                 <div className="relative rounded-2xl bg-slate-50 overflow-hidden border-2 border-white shadow-xl max-h-[350px]">
-                  <img 
+                  <ImageWithFallback 
                     src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" 
                     alt="Experienced Dermatology Doctor Consultation"
                     className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
+                    variant="doctor"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                   <span className="absolute bottom-4 left-4 text-white font-serif font-bold text-md">ISO-9001 Patient Standard Clinic</span>
@@ -512,11 +514,11 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-1">
                   {EXPERT_SPECIALISTS.map((doc, idx) => (
                     <div key={idx} className="flex gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100/60">
-                      <img 
+                      <ImageWithFallback 
                         src={doc.imageUrl} 
                         alt={doc.name} 
                         className="w-16 h-16 rounded-xl object-cover border border-white shadow-sm shrink-0"
-                        referrerPolicy="no-referrer"
+                        variant="doctor"
                       />
                       <div className="space-y-1">
                         <span className="block text-xs font-bold text-slate-900 leading-snug">{doc.name}</span>

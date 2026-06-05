@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { MoveLeft, MoveRight } from "lucide-react";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface BeforeAfterSliderProps {
   key?: string;
@@ -66,11 +67,11 @@ export default function BeforeAfterSlider({
         id="slider-interactive-area"
       >
         {/* AFTER Image (Full container background) */}
-        <img 
+        <ImageWithFallback 
           src={afterImg} 
           alt={`${title} - After`}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          referrerPolicy="no-referrer"
+          variant="beforeAfter"
         />
 
         {/* AFTER Badge (Bottom-Right) */}
@@ -83,12 +84,12 @@ export default function BeforeAfterSlider({
           className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
           style={{ width: `${sliderPosition}%` }}
         >
-          <img 
+          <ImageWithFallback 
             src={beforeImg} 
             alt={`${title} - Before`}
             className="absolute inset-0 w-full h-full object-cover max-w-none"
             style={{ width: containerRef.current?.getBoundingClientRect().width }}
-            referrerPolicy="no-referrer"
+            variant="beforeAfter"
           />
         </div>
 
