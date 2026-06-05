@@ -155,8 +155,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-slate-50/60" id="main-app-container">
       
-      {/* Target Key Words for Screen Reader local indexing as comments */}
-      <h1 className="sr-only">Best Skin Clinic in Manikonda Hyderabad - A9 Skin & Hair Care Clinic</h1>
+      {/* Target Key Words for Screen Reader and Local Indexing */}
       <h2 className="sr-only">Best Hair Clinic in Hyderabad, Laser Hair Removal Manikonda, Hair Regrowth Treatment Hyderabad</h2>
 
       {/* Navbar Container */}
@@ -187,7 +186,15 @@ export default function App() {
                 <span>Premium Quality Dermatologist Supervised Clinic</span>
               </div>
 
-              {/* H1 Main SEO Title */}
+              {/* SEO Optimized Visible Primary Headline */}
+              <div className="space-y-1 block" id="seo-primary-headline">
+                <h1 className="text-xs sm:text-sm font-extrabold tracking-wider text-teal-600 uppercase font-sans">
+                  Best Skin, Hair & Laser Clinic in Manikonda, Hyderabad
+                </h1>
+                <div className="h-0.5 w-16 bg-gradient-to-r from-teal-500 to-pink-500 mx-auto lg:mx-0 rounded-full mt-1"></div>
+              </div>
+
+              {/* Main Heading */}
               <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-tight lg:leading-[1.1]">
                 Advanced Skin & Hair Solutions <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-teal-600 via-teal-700 to-pink-500 bg-clip-text text-transparent italic">
