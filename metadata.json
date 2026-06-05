@@ -1,0 +1,6 @@
+{
+  "name": "A9 Skin & Hair Care",
+  "description": "Premium, modern mobile-first website for A9 Skin & Hair Care Clinic in Manikonda, Hyderabad. Advanced skin, hair, and laser treatments.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
